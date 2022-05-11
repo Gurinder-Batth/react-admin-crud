@@ -15,21 +15,19 @@ const PostCreate = (props) => {
 
 
   const handleClickOpen = () => {
-    setPublishState( (prevPublishState) => { return !prevPublishState});
     setOpen(true);
   };
 
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const agree = () => {
+    setPublishState( (prev) => { return !prev});
     setOpen(false);
   };
 
-  const disagree = () => {
-    setPublishState( (prevPublishState) => { return !prevPublishState});
-    setOpen(false);
-  };
-
-  const changePublish = (data,data2) => {
+  const changePublish = () => {
     return publishState
   }
 
@@ -42,10 +40,10 @@ const PostCreate = (props) => {
         <TextInput source='title' />
         <TextInput multiline source='body' />
         <DateInput label='Published' source='publishedAt' />
-        <BooleanInput 
-         label="Publish" 
+        <BooleanInput label="Publish" 
          onClick={handleClickOpen}
-         defaultValue={true}
+         defaultValue={setPublishState}
+        //  parse={changePublish}
          format={changePublish}
          source="publish" />
       </SimpleForm>
@@ -54,6 +52,7 @@ const PostCreate = (props) => {
       
       <Dialog
         open={open}
+        onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
@@ -67,7 +66,7 @@ const PostCreate = (props) => {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={disagree}>Disagree</Button>
+          <Button onClick={handleClose}>Disagree</Button>
           <Button onClick={agree} autoFocus>
             Agree
           </Button>
