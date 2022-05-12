@@ -1,4 +1,4 @@
-# React Admin Example
+# Control the submission handler of react admin using useContext 
 
 > Example of React Admin. We use JSON-Server for our REST API
 
