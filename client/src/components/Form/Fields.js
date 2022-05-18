@@ -5,6 +5,9 @@ import {
   TextInput,
   DateInput,
   BooleanInput,
+  ArrayInput,
+  SimpleFormIterator,
+  FormDataConsumer,
 } from "react-admin";
 import { FormContext } from "../PostCreate";
 import Dialog from "@mui/material/Dialog";
@@ -12,7 +15,7 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import { Button, Grid } from "@material-ui/core";
+import { Button, Grid, TextField } from "@material-ui/core";
 
 export default function Fields() {
   const [validationStatus, changeValidationStatus] =
@@ -47,11 +50,47 @@ export default function Fields() {
     <>
       <Grid container spacing={2}>
         <Grid item md={12}>
-          <TextInput fullWidth source="title" />
+
+        <ArrayInput source="authors">
+            <SimpleFormIterator >
+                    {/* <TextInput fullWidth label={"First Name"} placeholder="First Name" source="fname" /> */}
+                    <FormDataConsumer>
+                        {({ getSource, scopedFormData  }) => {
+                            return (
+                              <>
+                                <Grid container spacing={2}>
+                                  <Grid item xs={6}>
+                                      <TextInput
+                                          fullWidth
+                                          placeholder="First Name"
+                                          label={"First Name"}
+                                          source={getSource('fname')}
+                                          record={scopedFormData}
+                                      />
+                                  </Grid>
+                                  <Grid item xs={6}>
+                                      <TextInput
+                                        fullWidth
+                                        label={"Last Name"}
+                                        placeholder="Last Name"
+                                        source={getSource('lname')}
+                                        record={scopedFormData}
+                                      />
+                                  </Grid>
+                                </Grid>
+                              </>
+                            );
+                        }}
+                    </FormDataConsumer>
+            </SimpleFormIterator>
+        </ArrayInput>
+
         </Grid>
-        <Grid item md={12}>
-          <TextInput fullWidth multiline source="body" />
-        </Grid>
+
+        
+        <TextInput fullWidth source="title" />
+      <TextInput fullWidth multiline source="body" />
+
         <Grid item md={12}>
           <DateInput fullWidth label="Published" source="publishedAt" />
         </Grid>

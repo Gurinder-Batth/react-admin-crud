@@ -2,93 +2,32 @@
   "posts": [
     {
       "publish": true,
-      "title": "dsadas",
-      "body": "dsadas",
-      "note": "sdds",
-      "publishedAt": "2022-05-21",
+      "authors": [
+        {
+          "fname": "errex",
+          "lname": "dkds"
+        }
+      ],
+      "title": "adsdsa",
+      "body": "dasdsa",
       "id": 1
     },
     {
-      "publish": false,
-      "title": "das",
-      "body": "dsads",
-      "note": "dsada",
+      "publish": true,
+      "authors": [
+        {
+          "fname": "Gaming Test",
+          "lname": "Gaming End"
+        },
+        {
+          "fname": "Rko Start",
+          "lname": "Rko End"
+        }
+      ],
+      "title": "Hello",
+      "body": "World",
       "publishedAt": "2022-05-31",
       "id": 2
-    },
-    {
-      "publish": false,
-      "title": "sdssd",
-      "body": "dsdsds",
-      "note": "dsds",
-      "publishedAt": "2022-05-19",
-      "id": 3
-    },
-    {
-      "publish": true,
-      "title": "sdsfd",
-      "body": "sdfdfsfd",
-      "publishedAt": "2022-05-20",
-      "id": 4
-    },
-    {
-      "publish": false,
-      "title": "dsassdsdds",
-      "body": "dsdaadssadds",
-      "id": 5
-    },
-    {
-      "title": "sasa",
-      "body": "sadsaa",
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "title": "dd",
-      "id": 11
-    },
-    {
-      "id": 12
-    },
-    {
-      "id": 13
-    },
-    {
-      "id": 14
-    },
-    {
-      "title": "asasd",
-      "body": "dsas",
-      "publishedAt": "2022-05-24",
-      "fullbody": "asasd dsas",
-      "id": 15
-    },
-    {
-      "fullbody": "undefined undefined",
-      "id": 16
-    },
-    {
-      "id": 17
-    },
-    {
-      "title": "dsdssd",
-      "body": "sddsds",
-      "publishedAt": "2022-05-26",
-      "id": 18
-    },
-    {
-      "id": 19
     }
   ],
   "users": [
